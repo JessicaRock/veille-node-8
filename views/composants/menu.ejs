@@ -1,5 +1,11 @@
 <nav>
 	<ul>
+		<% console.log('ejs = ' + getLocale()) %>
+		<%= __('accueil') %>
+		<%= __('adresses') %>
+		<%= __('peuplement') %>
+		<%= __('vider') %>
+
 		<li><a href="http://localhost:8081/">Accueil</a></li>
 		<li><a href="http://localhost:8081/membres">Adresses</a></li>
 		<li><a href="http://localhost:8081/peuplement">Peuplement</a></li>

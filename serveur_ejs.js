@@ -9,14 +9,16 @@ i18n.configure({
    locales : ['fr', 'en'],
    cookie : 'langueChoisie', 
    directory : __dirname + '/locales' });
+const cookieParser = require('cookie-parser');
+
 
 const peupler = require('./mes_modules/peupler');//./mes_modules/peupler/index.js
 
 const util = require("util");
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(i18n.init)
-
+app.use(i18n.init);
+app.use(cookieParser());
 
 /* on associe le moteur de vue au module «ejs» */
 app.set('view engine', 'ejs'); // générateur de template
@@ -75,15 +77,28 @@ app.get('/membres', (req, res) => {
 
 
 app.get('/', (req, res) => {
-	console.log('accueil')
    	res.render('accueil.ejs');
 })
 
 
 app.get('/:locale(en|fr)', (req, res) =>{
+	res.cookie('langueChoisie', req.params.locale);
 	res.setLocale(req.params.locale);
-	console.log(res.__('bonjour'));
-	res.redirect('/membres');
+	console.log(res.__('accueil'));
+	let aMenu = [
+		res.__('accueil'),
+		res.__('adresses'),
+		res.__('peuplement'),
+		res.__('vider')
+	];
+
+	console.log(aMenu);
+	console.log('***************');
+	console.log('Cookies: ', req.cookies)
+	console.log(res.getLocale());
+	//console.log('util = ' + util.inspect(req));
+	//res.redirect(req.get("referer"));
+	res.redirect('/');
 })
 
 

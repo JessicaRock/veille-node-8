@@ -1,3 +1,6 @@
 {
-	"bonjour" : "Bonjour"
+	"accueil" : "Accueil",
+	"adresses" : "Adresses",
+	"peuplement" : "Peuplement",
+	"vider" : "Vider"
 }

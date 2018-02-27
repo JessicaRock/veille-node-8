@@ -1,3 +1,6 @@
 {
-	"bonjour" : "Hello"
+	"accueil" : "Home",
+	"adresses" : "Adress",
+	"peuplement" : "Populize",
+	"vider" : "Empty"
 }
