@@ -1,8 +1,10 @@
 body {
   background-color: #c9e3e8;
   display: flex;
+  min-height: 100vh;
   flex-flow: column;
   align-items: center;
+  justify-content: space-between;
   cursor: default;
 }
 body nav ul {
