@@ -4,12 +4,12 @@ const app = express();
 const bodyParser= require('body-parser');
 const MongoClient = require('mongodb').MongoClient; // le pilote MongoDB
 const ObjectID = require('mongodb').ObjectID;
+const cookieParser = require('cookie-parser');
 const i18n = require('i18n');
 i18n.configure({ 
    locales : ['fr', 'en'],
    cookie : 'langueChoisie', 
    directory : __dirname + '/locales' });
-const cookieParser = require('cookie-parser');
 
 
 const peupler = require('./mes_modules/peupler');//./mes_modules/peupler/index.js
@@ -17,8 +17,8 @@ const peupler = require('./mes_modules/peupler');//./mes_modules/peupler/index.j
 const util = require("util");
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(i18n.init);
 app.use(cookieParser());
+app.use(i18n.init);
 
 /* on associe le moteur de vue au module «ejs» */
 app.set('view engine', 'ejs'); // générateur de template
@@ -82,8 +82,8 @@ app.get('/', (req, res) => {
 
 
 app.get('/:locale(en|fr)', (req, res) =>{
-	res.cookie('langueChoisie', req.params.locale);
 	res.setLocale(req.params.locale);
+	res.cookie('langueChoisie', req.params.locale);
 	console.log(res.__('accueil'));
 	let aMenu = [
 		res.__('accueil'),
@@ -96,6 +96,7 @@ app.get('/:locale(en|fr)', (req, res) =>{
 	console.log('***************');
 	console.log('Cookies: ', req.cookies)
 	console.log(res.getLocale());
+	//console.log(req.headers);
 	//console.log('util = ' + util.inspect(req));
 	//res.redirect(req.get("referer"));
 	res.redirect('/');
