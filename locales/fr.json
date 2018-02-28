@@ -2,5 +2,13 @@
 	"accueil" : "Accueil",
 	"adresses" : "Adresses",
 	"peuplement" : "Peuplement",
-	"vider" : "Vider"
+	"vider" : "Vider",
+	"membres" : "Membres",
+	"prenom" : "Prénom",
+	"nom" : "Nom",
+	"telephone" : "Téléphone",
+	"courriel" : "Courriel",
+	"ajouter" : "Ajouter",
+	"modifier" : "Enregistrer (modifier)",
+	"supprimer" : "Supprimer"
 }

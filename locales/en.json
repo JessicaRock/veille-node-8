@@ -2,5 +2,13 @@
 	"accueil" : "Home",
 	"adresses" : "Adress",
 	"peuplement" : "Populize",
-	"vider" : "Empty"
+	"vider" : "Empty",
+	"membres" : "Members",
+	"prenom" : "First name",
+	"nom" : "Last name",
+	"telephone" : "Phone number",
+	"courriel" : "E-mail",
+	"ajouter" : "Add",
+	"modifier" : "Register (modify)",
+	"supprimer" : "Delete"
 }
