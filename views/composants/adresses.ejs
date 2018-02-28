@@ -1,4 +1,4 @@
-<h1>Membres</h1>
+<h1><%= __('membres') %></h1>
 <table class="tableau">
 	<% let noLigne = 0 %>
 	<% if(typeof ordre_url == 'undefined') {ordre_url = 'asc'} %>
@@ -10,13 +10,13 @@
 	 				<th><a href=http://localhost:8081/trier/<%= p %>/asc ><%= p %></a></th>
 	 				<% } %>-->
 					<th><a href=http://localhost:8081/trier/_id/<%= ordre_url %> >_id</a></th>
-					<th><a href=http://localhost:8081/trier/prenom/<%= ordre_url %> >prenom</a></th>
-					<th><a href=http://localhost:8081/trier/nom/<%= ordre_url %> >nom</a></th>
-					<th><a href=http://localhost:8081/trier/telephone/<%= ordre_url %> >telephone</a></th>
-					<th><a href=http://localhost:8081/trier/courriel/<%= ordre_url %> >courriel</a></th>
+					<th><a href=http://localhost:8081/trier/prenom/<%= ordre_url %> ><%= __('prenom') %></a></th>
+					<th><a href=http://localhost:8081/trier/nom/<%= ordre_url %> ><%= __('nom') %></a></th>
+					<th><a href=http://localhost:8081/trier/telephone/<%= ordre_url %> ><%= __('telephone') %></a></th>
+					<th><a href=http://localhost:8081/trier/courriel/<%= ordre_url %> ><%= __('courriel') %></a></th>
 					<th></th>
 					<th>
-						<a href=http://localhost:8081/ajouter> Ajouter </a>
+						<a href=http://localhost:8081/ajouter><%= __('ajouter') %></a>
 					</th>
 				</tr>
 			<% } %>
@@ -29,8 +29,8 @@
 				<th contenteditable><%= elm.nom %></th>
 				<td contenteditable><%= elm.telephone %></td>
 				<td contenteditable><%= elm.courriel %></td>
-				<td><a href="#" class="modifier"> Enregistrer (Modifier) </a></td>
-				<td><a href=http://localhost:8081/supprimer/<%= elm._id %> >Supprimer </a></td>
+				<td><a href="#" class="modifier"> <%= __('modifier') %></a></td>
+				<td><a href=http://localhost:8081/supprimer/<%= elm._id %> ><%= __('supprimer') %></a></td>
 			</tr>
 		<% } %>
 </table>
@@ -41,15 +41,15 @@
 	<input type="hidden" name="telephone">
 	<input type="hidden" name="courriel">
 </form>
-<h1>Inscription membre</h1>
+<h1><%= __('inscription') %></h1>
 <form action="http://127.0.0.1:8081/ajouter" method="GET">
-	Prénom:
+	<%= __('prenom') %>:
 	<input type="text" name="prenom">
-	<br> Nom:
+	<br><%= __('nom') %>:
 	<input type="text" name="nom">
-	<br> Téléphone:
+	<br><%= __('telephone') %>:
 	<input type="text" name="telephone">
-	<br> Courriel:
+	<br><%= __('courriel') %>:
 	<input type="text" name="courriel">
 	<br>
 	<input type="submit" value="Submit" class="bouton">

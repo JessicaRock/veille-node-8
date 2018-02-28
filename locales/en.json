@@ -1,9 +1,11 @@
 {
 	"accueil" : "Home",
-	"adresses" : "Adress",
+	"adresses" : "Address",
 	"peuplement" : "Populize",
 	"vider" : "Empty",
 	"membres" : "Members",
+	"inscription" : "Register",
+	"carnet" : "Address book",
 	"prenom" : "First name",
 	"nom" : "Last name",
 	"telephone" : "Phone number",
