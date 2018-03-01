@@ -84,22 +84,8 @@ app.get('/', (req, res) => {
 app.get('/:locale(en|fr)', (req, res) =>{
 	res.setLocale(req.params.locale);
 	res.cookie('langueChoisie', req.params.locale);
-	console.log(res.__('accueil'));
-	let aMenu = [
-		res.__('accueil'),
-		res.__('adresses'),
-		res.__('peuplement'),
-		res.__('vider')
-	];
-
-	console.log(aMenu);
-	console.log('***************');
-	console.log('Cookies: ', req.cookies)
-	console.log(res.getLocale());
-	//console.log(req.headers);
-	//console.log('util = ' + util.inspect(req));
-	//res.redirect(req.get("referer"));
-	res.redirect('/');
+	
+	res.redirect(req.get("referer"));
 })
 
 
